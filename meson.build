@@ -136,7 +136,7 @@ manpages_stylesheet = 'http://docbook.sourceforge.net/release/xsl/current/manpag
 have_manpages_stylesheet = false
 if xsltproc.found()
   have_manpages_stylesheet = run_command(xsltproc, '--nonet', manpages_stylesheet, check: false).returncode() == 0
-  if (false == have_manpages_stylesheet)
+  if not have_manpages_stylesheet
     docs_error_string = 'docbook.xsl stylesheet was not found.'
   else
     docs_error_string = ''
